@@ -143,3 +143,15 @@
   (if (= n-rows row)
     0
     (* (- n-cols (dec col)) (- n-rows row))))
+
+;https://www.codewars.com/kata/5545f109004975ea66000086
+(defn is-divisible [n x y]
+  ;; your code here
+  (if (> (+ (rem n x) (rem n y)) 0)
+    false
+    true))
+
+;https://www.codewars.com/kata/55a70521798b14d4750000a4
+(defn greet [name]
+  ; Simble greeting code
+  (str "Hello, " name " how are you doing today?"))
