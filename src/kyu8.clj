@@ -123,3 +123,23 @@
 ;https://www.codewars.com/kata/55d24f55d7dd296eb9000030
 (defn summation [n]
   (apply + (range (+ 1 n))))
+
+;https://www.codewars.com/kata/5601409514fc93442500010b
+(defn better_than_average [class_points your_points]
+  ;Your Code here
+  (if (> your_points (/ (apply + class_points) (count class_points))) true false))
+
+;https://www.codewars.com/kata/57eae65a4321032ce000002d
+(defn fake-bin [x]
+  ;; TODO
+  (->> x
+       (re-seq #"\d")
+       (map #(if (>= (Integer/parseInt %) 5) 1 0))
+       (str/join "")))
+
+;https://www.codewars.com/kata/588417e576933b0ec9000045
+(defn seats-in-theater [n-cols n-rows col row]
+  ;; your code here
+  (if (= n-rows row)
+    0
+    (* (- n-cols (dec col)) (- n-rows row))))

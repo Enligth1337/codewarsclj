@@ -125,5 +125,14 @@
   [bus-stops]
   (apply + (map #(apply - %) bus-stops)))
 
+(defn solve [s idx]
+  (apply str
+         (reduce (fn [acc x]
+                   (if (and (>= x 0) (< x (count acc)))
+                     (update acc x #(str/upper-case %))
+                     acc))
+                 (vec (map str (seq s)))
+                 idx)))
+
 (vaporcode "Why isn't my code working?")
 (filter #(not= " " %) (map #(str %) (seq "Lets go to the movies")))
