@@ -134,5 +134,9 @@
                  (vec (map str (seq s)))
                  idx)))
 
+;https://www.codewars.com/kata/55cbc3586671f6aa070000fb
+(defn check-for-factor [base factor]
+  (zero? (rem base factor)))
+
 (vaporcode "Why isn't my code working?")
 (filter #(not= " " %) (map #(str %) (seq "Lets go to the movies")))

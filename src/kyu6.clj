@@ -67,6 +67,24 @@
   [s]
   (map #(apply str %) (partition 2 2 "_"  s)))
 
+;https://www.codewars.com/kata/51b6249c4612257ac0000005
+(def numerals {:I 1 :V 5 :X 10 :L 50 :C 100 :D 500 :M 1000})
+
+(defn translate-roman-numerals [roman]
+  ;; your code here
+  (->> roman
+       seq
+       (map str)
+       (map keyword)
+       (map numerals)
+       (reduce (fn [acc t]
+                 (if (> t (first acc))
+                   (conj (rest acc) (- t (first acc)))
+                   (conj acc t)
+                   )) '(0))
+       (apply +)
+       ))
+
 
 
 
