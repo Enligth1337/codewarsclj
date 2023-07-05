@@ -85,6 +85,10 @@
        (apply +)
        ))
 
+;https://www.codewars.com/kata/525f50e3b73515a6db000b83
+(defn create-phone-number [nums]
+  (let [coll (map #(apply str %) (partition-all  3 3 nums))]
+    (str "(" (first coll) ") " (second coll) "-" (last (butlast coll)) (last coll))))
 
 
 
