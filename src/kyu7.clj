@@ -134,5 +134,22 @@
                  (vec (map str (seq s)))
                  idx)))
 
+
+(defn get-middle [s]
+  (if (= 0 (rem (count s) 2))
+    (str (get s (-(/ (count s) 2) 1)) (get s (/ (count s) 2)))
+    (str (get s (int (/ (count s) 2))))))
+
+;https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d
+(defn solution [strng ending]
+  ;(->> strng
+  ;      (take-last (count ending))
+  ;      (map str )
+  ;      (str/join "")
+  ;      (= ending))
+  (str/ends-with? strng ending))
+
+
+
 (vaporcode "Why isn't my code working?")
 (filter #(not= " " %) (map #(str %) (seq "Lets go to the movies")))
