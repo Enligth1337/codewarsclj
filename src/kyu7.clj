@@ -148,5 +148,18 @@
   ;      (= ending))
   (str/ends-with? strng ending))
 
-(vaporcode "Why isn't my code working?")
-(filter #(not= " " %) (map #(str %) (seq "Lets go to the movies")))
+;https://www.codewars.com/kata/540de1f0716ab384b4000828
+(defn spread
+  [func, args]
+  ; ...
+  (apply func args))
+
+;https://www.codewars.com/kata/57f759bb664021a30300007d
+(defn switcheroo [xs]
+  ;; TODO
+  (str/join "" (reduce (fn [acc x]
+                         (cond
+                           (= x \a) (conj acc "b")
+                           (= x \b) (conj acc "a")
+                           :else (conj acc x))) [] xs)))
+
