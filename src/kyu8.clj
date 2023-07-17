@@ -155,3 +155,7 @@
 (defn greet [name]
   ; Simble greeting code
   (str "Hello, " name " how are you doing today?"))
+
+;https://www.codewars.com/kata/55cbc3586671f6aa070000fb
+(defn check-for-factor [base factor]
+  (if (= 0 (rem base factor)) true false))
