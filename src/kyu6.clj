@@ -67,7 +67,14 @@
   [s]
   (map #(apply str %) (partition 2 2 "_"  s)))
 
-
+;https://www.codewars.com/kata/5498505a43e0fd83620010a9
+(defn vector-affinity
+  [a b]
+  (if (seq a)
+    (float (/ (count (filter #(apply = %) (apply mapv vector [a b]))) (count a)))
+    (if (seq b)
+      0.0
+      1.0)))
 
 
 
