@@ -90,6 +90,19 @@
   (let [coll (map #(apply str %) (partition-all  3 3 nums))]
     (str "(" (first coll) ") " (second coll) "-" (last (butlast coll)) (last coll))))
 
+;https://www.codewars.com/kata/5a946d9fba1bb5135100007c
+(defn prime [n]
+  (if (= 2 (count (filter (fn [x]
+                            (= 0 (rem n x))) (rest (range (inc n))))))
+    n
+    (recur (inc n))))
+
+
+(defn minimum-number [numbers]
+  ; TODO
+  (let [sum (apply + numbers)]
+    (- (prime sum) sum)))
+
 
 
 
