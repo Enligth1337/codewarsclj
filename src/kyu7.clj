@@ -134,9 +134,32 @@
                  (vec (map str (seq s)))
                  idx)))
 
-;https://www.codewars.com/kata/55cbc3586671f6aa070000fb
-(defn check-for-factor [base factor]
-  (zero? (rem base factor)))
+(defn get-middle [s]
+  (if (= 0 (rem (count s) 2))
+    (str (get s (-(/ (count s) 2) 1)) (get s (/ (count s) 2)))
+    (str (get s (int (/ (count s) 2))))))
 
-(vaporcode "Why isn't my code working?")
-(filter #(not= " " %) (map #(str %) (seq "Lets go to the movies")))
+;https://www.codewars.com/kata/51f2d1cafc9c0f745c00037d
+(defn solution [strng ending]
+  ;(->> strng
+  ;      (take-last (count ending))
+  ;      (map str )
+  ;      (str/join "")
+  ;      (= ending))
+  (str/ends-with? strng ending))
+
+;https://www.codewars.com/kata/540de1f0716ab384b4000828
+(defn spread
+  [func, args]
+  ; ...
+  (apply func args))
+
+;https://www.codewars.com/kata/57f759bb664021a30300007d
+(defn switcheroo [xs]
+  ;; TODO
+  (str/join "" (reduce (fn [acc x]
+                         (cond
+                           (= x \a) (conj acc "b")
+                           (= x \b) (conj acc "a")
+                           :else (conj acc x))) [] xs)))
+
