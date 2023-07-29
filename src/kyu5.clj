@@ -24,3 +24,11 @@
    (if (< n 5)
      (int cnt)
      (recur (/ n 5) (+ cnt (/ n 5))))))
+
+;https://www.codewars.com/kata/52685f7382004e774f0001f7
+(defn formatDuration [secs]
+  ; TODO
+  (let [h (int (/ secs 3600))
+        m (int (/ (- secs (* h 3600)) 60))
+        s (- secs (* 3600 h) (* 60 m))]
+    (format "%02d:%02d:%02d" h m s)))
