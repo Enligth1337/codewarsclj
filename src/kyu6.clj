@@ -103,5 +103,28 @@
   (let [sum (apply + numbers)]
     (- (prime sum) sum)))
 
+;https://www.codewars.com/kata/54b42f9314d9229fd6000d9c
+(defn encode-dups [text]
+  ; Your brilliant code here :)
+  (let [coll(seq (str/lower-case text))
+        mp (frequencies coll)]
+    (apply str (reduce (fn [acc x]
+                         (if (> (get mp x) 1)
+                           (conj acc ")")
+                           (conj acc "("))) [] coll))))
+
+;https://www.codewars.com/kata/55bf01e5a717a0d57e0000e
+(defn persistence
+  ([n]
+   (persistence 0 n))
+  ([step n]
+   (if (= 1 (count (str n)))
+     step
+     (->> (str n)
+          (re-seq #"\d")
+          (map #(Integer/parseInt %))
+          (apply *)
+          (recur (inc step))))))
+
 
 
