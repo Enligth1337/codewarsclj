@@ -126,5 +126,12 @@
           (apply *)
           (recur (inc step))))))
 
-
+;https://www.codewars.com/kata/545cedaa9943f7fe7b000048
+(defn pangram?
+  [s]
+  ; TODO
+  (if (= 26 (count
+              (set (re-seq #"[a-z]" (str/lower-case s)))))
+    true
+    false))
 

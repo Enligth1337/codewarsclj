@@ -163,3 +163,11 @@
                            (= x \b) (conj acc "a")
                            :else (conj acc x))) [] xs)))
 
+;https://www.codewars.com/kata/5656b6906de340bd1b0000ac
+(defn longest [s1 s2]
+  ; your code
+  (->> (concat s1 s2)
+       sort
+       set
+       (apply str)))
+
